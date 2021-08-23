@@ -1,0 +1,88 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<style>
+		a:link { text-decoration: none; }
+		
+		
+		a:visited { text-decoration: none; }
+		
+		
+		a:hover { text-decoration: none; }
+		
+		
+		a:active { text-decoration: none; }
+	</style>
+	
+	<script type="text/javascript">
+        // Wait for the page to load first
+        window.onload = function() {
+
+          //Get a reference to the link on the page
+          // with an id of "mylink"
+          var f = document.getElementById("f");
+          var ff = document.getElementById("ff");
+          var fff = document.getElementById("fff");
+          var b = document.getElementById("b");
+          var bb = document.getElementById("bb");
+          var bbb = document.getElementById("bbb");
+          var canvas = document.getElementById("canvas");
+          var i = 0;
+
+          function updatecanvas() {
+          	canvas.src = "./data/page-" + ("00" + i).slice(-3) + ".png"; 	
+          }
+
+          f.onclick = function() {
+          	i = i + 1;
+            updatecanvas();
+            return false;
+          }
+
+          ff.onclick = function() {
+          	i = i + 10;
+			updatecanvas();            
+            return false;
+          }
+
+          fff.onclick = function() {
+          	i = i + 100;
+			updatecanvas();            
+            return false;
+          }
+
+          b.onclick = function() {
+          	i = i - 1;
+            updatecanvas();
+            return false;
+          }
+
+          bb.onclick = function() {
+          	i = i - 10;
+			updatecanvas();            
+            return false;
+          }
+
+          bbb.onclick = function() {
+          	i = i - 100;
+			updatecanvas();            
+            return false;
+         }
+        }
+    </script>
+</head>
+<body>
+	<div style='height: 100%; width: 100%; object-fit: contain'>
+
+		<a id=bbb href="#"> &lt;&lt;&lt; </a> |
+		<a id=bb href="#"> &lt;&lt; </a> |
+		<a id=b href="#"> &lt; </a> | X |
+		<a id=f href="#"> &gt; </a> |
+		<a id=ff href="#"> &gt;&gt; </a> |
+		<a id=fff href="#"> &gt;&gt;&gt; </a>		
+
+		<img style='height: 100%; width: 100%; object-fit: contain'  id=canvas src=data/page-001.png />
+	</div>
+</body>
+</html>
